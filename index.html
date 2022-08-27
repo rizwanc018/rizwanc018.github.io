@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- https://canvasjs.com/javascript-candlestick-chart/ -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <title>Paper Trade</title>
+</head>
+
+<body>
+    <nav class="nav-bar">
+
+        <div class="logo">
+            <span class="material-symbols-outlined">hive</span>
+            <h1>Prade</h1>
+        </div>
+        <div class="nav-items">
+            <form class="search-form">
+                <input type="text" name="coin-search" class="coin-search" placeholder="BTCUSDT">
+                <!-- <input type="submit" value="search"> -->
+                <ul class="suggestions">
+                </ul>
+            </form>
+
+
+            <ul class="cool">
+                <li class="funds">Add Fund
+                    <div class="dropdown funds-dropdown">
+                        <form class="fund-form">
+                            <input type="number" name="add-funds" placeholder="USDT" required>
+                            <input class="funds-button btn" type="submit" value="Add Funds">
+                        </form>
+                    </div>
+                </li>
+
+                <li class="portfolio">Portfolio
+                    <div class="dropdown portfolio-dropdown">
+                        <div class="balance">
+                            <span>Balance</span><span class="balance-amount"></span>
+                        </div>
+                        <div class="coins">
+                            <h3>Coins</h3>
+                            <ul class="coins-ul">
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="top-bar">
+        <div class="top-ticker">
+            <p class="cointicker">BTCUSDT</p>
+            <p><span class="ticker-price"></span></p>
+        </div>
+        <p class="error-msg"></p>
+        <div class="time-interval">
+            <button class="1m">1m</button>
+            <button class="5m">5m</button>
+            <button class="1h">1h</button>
+            <button class="4h">4h</button>
+            <button class="1d">1d</button>
+            <button class="1w">1w</button>
+            <button class="1M">1M</button>
+        </div>
+    </div>
+    <div id="chartContainer" style="height: 62vh; width: 100%;"></div>
+
+    <div class="trade">
+        <div class="buy">
+            <form class="buy-form">
+                <label for="buy-price">Buy Price:</label>
+                <input type="number" id="buy-price" step="0.01" placeholder="USDT" required>
+                <label class="buy-amount" for="buy-amount">Coin</label>
+                <input type="number" id="buy-quantity" step="0.01" placeholder="Quantity" required>
+                <input class="buy-button btn" type="submit" value="Buy">
+            </form>
+        </div>
+        <div class="sell">
+            <form class="sell-form">
+                <label for="sell-price">Sell Price:</label>
+                <input type="number" id="sell-price" step="0.01" placeholder="USDT" required>
+                <label class="sell-amount" for="sell-amount">Coin</label>
+                <input type="number" id="sell-quantity" step="0.01" placeholder="Quantity" required>
+                <input class="sell-button btn" type="submit" value="Sell">
+            </form>
+        </div>
+
+            <div class="market-data">
+                <h4><p class="cointicker">BTCUSDT</p></h4>
+                <p>Price <span class="ticker-price"></span></p>
+                <p>Base Volume <span class="base-vol"></span></p>
+                <p>Quote Volume <span class="quote-vol"></span></p>
+                <p>Trades <span class="trades"></span></p>
+            </div>
+    </div>
+    <script>
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
